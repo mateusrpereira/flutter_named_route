@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerenciador_tarefas/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -9,23 +10,23 @@ class LoginScreen extends StatelessWidget {
       body: Center(
         child: Container(
           width: 300,
-          padding: EdgeInsets.symmetric(vertical: 64.0),
+          padding: const EdgeInsets.symmetric(vertical: 64.0),
           child: Column(
             children: [
               Image.asset(
                 'assets/login.png',
                 height: 64,
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Login',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               TextFormField(decoration: InputDecoration(labelText: "E-mail")),
               TextFormField(decoration: InputDecoration(labelText: "Senha")),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => onButtonEntrarClicked(context),
                 child: Text('Entrar'),
               )
             ],
@@ -34,4 +35,13 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void onButtonEntrarClicked(BuildContext context) {
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (context) => DashboardScreen(),
+    ),
+  );
 }
