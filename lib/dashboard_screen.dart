@@ -57,11 +57,12 @@ class DashboardScreen extends StatelessWidget {
   }
 
   void onButtonSairClicked(BuildContext context) {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => LoginScreen(),
-      ),
-    );
+    // Navigator.pushReplacement(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => LoginScreen(),
+    //   ),
+    // );
+    Navigator.of(context).pushReplacementNamed("/login");
   }
 }
